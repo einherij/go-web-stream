@@ -1,0 +1,25 @@
+<section class="form-group container">
+    <div class="row justify-content-center">
+        <div class="col-md-4 bg-light border rounded" style="margin-top:20vh;padding-top:16px">
+            <div class="row justify-content-center">
+                <div class="col">
+                    <h1 style="display:inline;">Sign In</h1>
+                    <a href="/register" class="badge badge-secondary" style="float:right;">Sign Up</a>
+                </div>
+            </div>
+            <form action="/main" method="POST">
+                <div class="form-group">
+                    <label for="loginInput">Login:</label>
+                    <input type="text" name="Login" class="form-control" id="loginInput" placeholder="Enter login">
+                </div>
+                <div class="form-group">
+                    <label for="passwordInput">Password:</label>
+                    <input type="password" name="Password" class="form-control" id="passwordInput" placeholder="Enter password">
+                </div>
+                <div class="row justify-content-center">
+                    <button type="submit" class="btn btn-info">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,118 @@
+<section class="container-fluid">
+	<div class="row justify-content-center align-items-center mt-5">
+		<div class="col-sm-6 col-md-8">
+			<img class="img-fluid border rounded" id="bg" src="/video_feed">
+		</div>
+		<div class="col-sm-6 col-md-4">
+			<div class="row justify-content-center justify-content-lg-start">
+				<div class="control-set mt-5" oncontextmenu="return false;">
+					<div class="row no-gutters" style="max-width:200px">
+						<div class="col">
+							<img class="img-fluid" src="/data/arrows/left-top.png" alt="arrows" onmousedown="moveLeftTop()" ontouchstart="moveLeftTop()" onmouseleave="stopMoveLeftTop()" onmouseup="stopMoveLeftTop()" ontouchend="stopMoveLeftTop()" ontouchcancel="stopMoveLeftTop()">
+						</div>
+						<div class="col">
+							<img class="img-fluid" src="/data/arrows/top.png" alt="arrows" onmousedown="moveTop()" ontouchstart="moveTop()" onmouseleave="stopMoveTop()" onmouseup="stopMoveTop()" ontouchend="stopMoveTop()" ontouchcancel="stopMoveTop()">
+						</div>
+						<div class="col">
+							<img class="img-fluid" src="/data/arrows/right-top.png" alt="arrows" onmousedown="moveRightTop()" ontouchstart="moveRightTop()" onmouseleave="stopMoveRightTop()" onmouseup="stopMoveRightTop()" ontouchend="stopMoveRightTop()" ontouchcancel="stopMoveRightTop()">
+						</div>
+					</div>
+					<div class="row no-gutters" style="max-width:200px">
+						<div class="col">
+							<img class="img-fluid" src="/data/arrows/left.png" alt="arrows" onmousedown="moveLeft()" ontouchstart="moveLeft()" onmouseleave="stopMoveLeft()" onmouseup="stopMoveLeft()" ontouchend="stopMoveLeft()" ontouchcancel="stopMoveLeft()">
+						</div>
+						<div class="col">
+							<img class="img-fluid" src="/data/arrows/center.png" alt="arrows">
+						</div>
+						<div class="col">
+							<img class="img-fluid" src="/data/arrows/right.png" alt="arrows" onmousedown="moveRight()" ontouchstart="moveRight()" onmouseleave="stopMoveRight()" onmouseup="stopMoveRight()" ontouchend="stopMoveRight()" ontouchcancel="stopMoveRight()">
+						</div>
+					</div>
+					<div class="row no-gutters" style="max-width:200px">
+						<div class="col">
+							<img class="img-fluid" src="/data/arrows/left-bottom.png" alt="arrows" onmousedown="moveLeftBottom()" ontouchstart="moveLeftBottom()"onmouseleave="stopMoveLeftBottom()" onmouseup="stopMoveLeftBottom()" ontouchend="stopMoveLeftBottom()" ontouchcancel="stopMoveLeftBottom()">
+						</div>
+						<div class="col">
+							<img class="img-fluid" src="/data/arrows/bottom.png" alt="arrows" onmousedown="moveBottom()" ontouchstart="moveBottom()" onmouseleave="stopMoveBottom()" onmouseup="stopMoveBottom()" ontouchend="stopMoveBottom()" ontouchcancel="stopMoveBottom()">
+						</div>
+						<div class="col">
+							<img class="img-fluid" src="/data/arrows/right-bottom.png" alt="arrows" onmousedown="moveRightBottom()" ontouchstart="moveRightBottom()" onmouseleave="stopMoveRightBottom()" onmouseup="stopMoveRightBottom()" ontouchend="stopMoveRightBottom()" ontouchcancel="stopMoveRightBottom()">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		setInterval(sendToServerReq, 15000)	
+	}, true);
+	function sendToServerReq(address="/keep_alive") {
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET', address, true);
+		xhr.setRequestHeader("Cookies", document.cookie);
+		xhr.send();
+	}
+
+	function moveLeftTop() {
+		sendToServerReq("/run/1");
+	}
+	function stopMoveLeftTop() {
+		sendToServerReq("/run/11");
+	}
+
+	function moveTop() {
+		sendToServerReq("/run/2");
+	}
+	function stopMoveTop() {
+		sendToServerReq("/run/22");
+	}
+
+	function moveRightTop() {
+		sendToServerReq("/run/3");
+	}
+	function stopMoveRightTop() {
+		sendToServerReq("/run/33");
+	}
+
+	function moveLeft() {
+		sendToServerReq("/run/4");
+	}
+	function stopMoveLeft() {
+		sendToServerReq("/run/44");
+	}
+
+	function moveRight() {
+		sendToServerReq("/run/6");
+	}
+	function stopMoveRight() {
+		sendToServerReq("/run/66");
+	}
+
+	function moveLeftBottom() {
+		sendToServerReq("/run/7");
+	}
+	function stopMoveLeftBottom() {
+		sendToServerReq("/run/77");
+	}
+
+	function moveBottom() {
+		sendToServerReq("/run/8");
+	}
+	function stopMoveBottom() {
+		sendToServerReq("/run/88");
+	}
+
+	function moveRightBottom() {
+		sendToServerReq("/run/9");
+	}
+	function stopMoveRightBottom() {
+		sendToServerReq("/run/99");
+	}
+
+</script>
